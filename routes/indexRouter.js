@@ -20,6 +20,7 @@ const links = [
 ];
 
 router.get("/", (req, res) => res.render("index", { messages, links }));
+
 router.get("/new", (req, res) => res.render("form", { links }));
 router.post("/new", (req, res) => {
   messages.push({
@@ -29,6 +30,17 @@ router.post("/new", (req, res) => {
   });
 
   res.redirect("/");
+});
+
+router.get("/messages/:id", (req, res) => {
+  const messageID =
+    typeof Number(req.params.id) === "number" &&
+    !isNaN(Number(req.params.id)) &&
+    Number(req.params.id) < messages.length
+      ? Number(req.params.id)
+      : 0;
+
+  res.render("message", { message: messages[messageID], links });
 });
 
 module.exports = router;

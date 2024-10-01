@@ -11,10 +11,11 @@
     <main>
       <header>Homepage</header>
       <ul>
-        <% messages.forEach((message) => { %>
+        <% messages.forEach((message, id) => { %>
           <li>
             <p><%= message.user %>: <%= message.text %></p>
             <p><%- message.added.toDateString() %></p>
+            <a href="/messages/<%= id %>">View</a>
           </li>
         <% }) %>
       </ul>
