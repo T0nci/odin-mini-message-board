@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mini Message Board</title>
+    <title>Mini Message Board - Homepage</title>
     <link rel="stylesheet" href="./style.css">
   </head>
   <body>
     <%- include('navbar', { links: links }) %>
     <main>
+      <header>Homepage</header>
       <ul>
         <% messages.forEach((message) => { %>
           <li>

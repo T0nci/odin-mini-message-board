@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Message Board - New message</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <%- include('navbar', { links: links }) %>
+    <main>
+      <header>New message</header>
+      <form action="/new" method="post">
+        <div>
+          <label for="author">Author:</label>
+          <input 
+            type="text" 
+            name="author" 
+            id="author"
+            minlength="1" 
+            placeholder="Max..." 
+            autocomplete="off" 
+            autofocus
+            required 
+          />
+        </div>
+        <div>
+          <label for="message">Message:</label>
+          <input 
+            type="text"
+            name="message" 
+            id="message" 
+            minlength="1" 
+            placeholder="Hello, World!..." 
+            autocomplete="off" 
+            autofocus
+            required
+          >
+        </div>
+        <div>
+          <button type="submit">Submit message</button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
