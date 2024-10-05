@@ -10,9 +10,13 @@
     <%- include('navbar', { links: links }) %>
     <main>
       <header>Message</header>
-      <p><%= message.user %></p>
-      <p><%= message.text %></p>
-      <p><%- message.added.toDateString() %></p>
+      <% if (message[0]) { %>
+        <p><%= message[0].author %></p>
+        <p><%= message[0].message %></p>
+        <p><%- message[0].date.toDateString() %></p>
+      <% } else { %>
+        <p>Not found.</p>
+      <% } %>
     </main>
   </body>
 </html>
