@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS messages (
   date DATE
 );
 
-INSERT INTO messages (author, message, date)
+INSERT INTO messages (message, author, date)
 VALUES
   ('Hi there!', 'Amando', now()),
   ('Hello World!', 'Charles', now());
